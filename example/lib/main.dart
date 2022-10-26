@@ -106,8 +106,8 @@ class HomePage extends StatelessWidget {
                 onPressed: () {
                   DatePicker.showDatePicker(context,
                       showTitleActions: true,
-                      minTime: DateTime(2018, 3, 5),
-                      maxTime: DateTime(2019, 6, 7),
+                      minTime: DateTime(5, 3, 2018),
+                      maxTime: DateTime(7, 6, 2019),
                       theme: DatePickerTheme(
                           headerColor: Colors.orange,
                           backgroundColor: Colors.blue,
@@ -120,6 +120,9 @@ class HomePage extends StatelessWidget {
                       onChanged: (date) {
                     print('change $date in time zone ' +
                         date.timeZoneOffset.inHours.toString());
+                    final dateUS =
+                        DateTime.parse('10-11-2021 20:18:04Z').toLocal();
+                    print("Custom date time: $dateUS");
                   }, onConfirm: (date) {
                     print('confirm $date');
                   }, currentTime: DateTime.now(), locale: LocaleType.en);
